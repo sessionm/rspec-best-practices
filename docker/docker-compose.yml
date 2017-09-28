@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  rails:
+    image: "rails:onbuild"
+    volumes:
+      - ./:/usr/src/app
