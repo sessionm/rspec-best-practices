@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Proper name:</strong>
+  <%= @planet.proper_name %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @planet.slug %>
+</p>
+
+<p>
+  <strong>System:</strong>
+  <%= @planet.system %>
+</p>
+
+<%= link_to 'Edit', edit_planet_path(@planet) %> |
+<%= link_to 'Back', planets_path %>

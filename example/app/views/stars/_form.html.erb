@@ -1,0 +1,47 @@
+<%= form_with(model: star, local: true) do |form| %>
+  <% if star.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(star.errors.count, "error") %> prohibited this star from being saved:</h2>
+
+      <ul>
+      <% star.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :proper_name %>
+    <%= form.text_field :proper_name, id: :star_proper_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slug %>
+    <%= form.text_field :slug, id: :star_slug %>
+  </div>
+
+  <div class="field">
+    <%= form.label :composition_id %>
+    <%= form.text_field :composition_id, id: :star_composition_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mass %>
+    <%= form.text_field :mass, id: :star_mass %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.text_field :type, id: :star_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :system_id %>
+    <%= form.text_field :system_id, id: :star_system_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

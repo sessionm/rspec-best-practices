@@ -10,11 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928153609) do
+ActiveRecord::Schema.define(version: 20171010174820) do
 
   create_table "foos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "planets", force: :cascade do |t|
+    t.string "proper_name"
+    t.string "slug"
+    t.float "mass"
+    t.integer "solar_system_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proper_name"], name: "index_planets_on_proper_name", unique: true
+    t.index ["slug"], name: "index_planets_on_slug", unique: true
+    t.index ["solar_system_id"], name: "index_planets_on_solar_system_id"
+  end
+
+  create_table "solar_systems", force: :cascade do |t|
+    t.string "slug"
+    t.string "formal_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stars", force: :cascade do |t|
+    t.string "proper_name"
+    t.string "slug"
+    t.string "mass"
+    t.string "type"
+    t.integer "system_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["system_id"], name: "index_stars_on_system_id"
   end
 
 end

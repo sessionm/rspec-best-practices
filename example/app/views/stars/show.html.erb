@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Proper name:</strong>
+  <%= @star.proper_name %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @star.slug %>
+</p>
+
+<p>
+  <strong>Composition:</strong>
+  <%= @star.composition %>
+</p>
+
+<p>
+  <strong>Mass:</strong>
+  <%= @star.mass %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @star.type %>
+</p>
+
+<p>
+  <strong>System:</strong>
+  <%= @star.system %>
+</p>
+
+<%= link_to 'Edit', edit_star_path(@star) %> |
+<%= link_to 'Back', stars_path %>

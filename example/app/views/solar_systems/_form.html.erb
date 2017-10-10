@@ -1,0 +1,27 @@
+<%= form_with(model: solar_system, local: true) do |form| %>
+  <% if solar_system.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(solar_system.errors.count, "error") %> prohibited this solar_system from being saved:</h2>
+
+      <ul>
+      <% solar_system.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :slug %>
+    <%= form.text_field :slug, id: :solar_system_slug %>
+  </div>
+
+  <div class="field">
+    <%= form.label :formal_name %>
+    <%= form.text_field :formal_name, id: :solar_system_formal_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
