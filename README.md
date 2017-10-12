@@ -2,17 +2,18 @@
 A guide to RSpec best practices.
 
 ## Rspec
+See [solar_system_spec.rb](example/spec/models/solar_system_spec.rb) for the following:
 - Use subject with namespaces
 - Let vs let!
-
 - When and how to use describe vs context
-
 - One line syntax
-
 - Stubs and mocks
-
 - Testing validations
 - Testing models
+
+-----------
+
+# Coming Soon:
 
 - Testing controllers
 - Testing views

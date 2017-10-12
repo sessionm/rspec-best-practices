@@ -1,6 +1,6 @@
-class CreateSolarSystems < ActiveRecord::Migration[5.1]
+class CreateSystems < ActiveRecord::Migration[5.1]
   def change
-    create_table :solar_systems do |t|
+    create_table :systems do |t|
       t.string :slug
       t.string :formal_name
 

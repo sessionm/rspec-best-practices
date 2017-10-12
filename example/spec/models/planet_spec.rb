@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Planet, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject(:planet) { FactoryGirl.build(:planet) }
+
+  describe ".get_composition_for" do
+    pending
+  end
+
+  describe "#get_composition" do
+    pending
+  end
 end

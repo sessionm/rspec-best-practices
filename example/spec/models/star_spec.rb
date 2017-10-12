@@ -1,8 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Star, type: :model do
-  describe ".get_composition_for", pending: true do
+  subject(:star) { FactoryGirl.build(:star) }
+
+  describe ".get_composition_for" do
+    pending
   end
-  describe "#get_composition", pending: true do
+
+  describe "#get_composition" do
+    pending
   end
 end

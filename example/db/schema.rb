@@ -30,16 +30,16 @@ ActiveRecord::Schema.define(version: 20171012160721) do
     t.index ["planet_type_id"], name: "index_planets_on_planet_type_id"
   end
 
-  create_table "solar_systems", force: :cascade do |t|
+  create_table "stars", force: :cascade do |t|
     t.string "slug"
+    t.float "mass"
     t.string "formal_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "stars", force: :cascade do |t|
+  create_table "systems", force: :cascade do |t|
     t.string "slug"
-    t.float "mass"
     t.string "formal_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

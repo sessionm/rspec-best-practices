@@ -1,4 +1,4 @@
-class SolarSystem < ApplicationRecord
+class SolarSystem < System
   def get_stars
     Star.where(system: self.id)
   end
