@@ -164,6 +164,34 @@ RSpec.describe SolarSystem, type: :model do
     end
   end
 
-  describe "#get_composition", pending: true do
+  describe "#get_composition" do
+    subject(:get_composition) { solar_system.get_composition }
+    let(:stars_composition) { [Faker::Lorem.word] }
+    let(:planets_composition) { [Faker::Lorem.word] }
+
+    before do
+      allow(Star).to receive(:get_composition_for).and_return(stars_composition)
+      allow(Planet).to receive(:get_composition_for).and_return(planets_composition)
+    end
+
+    it "calls Star.get_composition_for with the correct args" do
+      expect(Star).to receive(:get_composition_for).with(
+        hash_including(:system => solar_system))
+
+      subject
+    end
+    it "calls Planet.get_composition_for with the correct args" do
+      expect(Planet).to receive(:get_composition_for).with(
+        hash_including(:system => solar_system))
+
+      subject
+    end
+    it "returns the union of the star compositions and planet compositions" do
+      union = planets_composition | stars_composition
+      #TODO: Rewrite to be includes each element once
+      union.each do |item|
+        expect(subject).to include(item)
+      end
+    end
   end
 end

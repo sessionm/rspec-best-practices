@@ -18,4 +18,11 @@ class SolarSystem < ApplicationRecord
   def trinary?
     Star.count(system: self.id) == 3
   end
+
+  def get_composition
+    stars_composition = Star.get_composition_for(system: self)
+    planets_composition = Planet.get_composition_for(system: self)
+
+    stars_composition | planets_composition
+  end
 end

@@ -9,9 +9,9 @@ class Planet < ApplicationRecord
   #- type (terrestrial v jovian)
 
   def self.get_composition_for(system)
-    self.where(system: system).each do |planet|
-      planet.get_composition
-    end
+    #self.where(system: system).each do |planet|
+    #  planet.get_composition
+    #end
   end
 
   def terrestrial?
