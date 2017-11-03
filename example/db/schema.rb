@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928153609) do
+ActiveRecord::Schema.define(version: 20171012160721) do
 
-  create_table "foos", force: :cascade do |t|
+  create_table "planet_types", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "planets", force: :cascade do |t|
+    t.string "formal_name"
+    t.string "slug"
+    t.string "system"
+    t.string "mass"
+    t.integer "planet_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["planet_type_id"], name: "index_planets_on_planet_type_id"
+  end
+
+  create_table "stars", force: :cascade do |t|
+    t.string "slug"
+    t.float "mass"
+    t.string "formal_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "systems", force: :cascade do |t|
+    t.string "slug"
+    t.string "formal_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
